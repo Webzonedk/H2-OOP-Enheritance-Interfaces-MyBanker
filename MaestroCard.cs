@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace MyBanker
 {
-    class MaestroCard : Expire, IDebit
+    class MaestroCard : Expire, IDebit //Enherit from CardClass and connected to the interface Idebit
     {
         #region Fields
   
@@ -25,13 +25,15 @@ namespace MyBanker
         
         {
             CardType = "Maestro";
-            CreateCardHolder();
+            CreateCardHolder();//Calling from Card class
             CardDigits = 19;
-            CreatePrefix();
-            CreateCardNumber();
+            CreatePrefix();//Calling from Card class
+            CreateCardNumber();//Calling from Card class
             RegNumber = 3520;
-            CreateAccountNumber();
+            CreateAccountNumber();//Calling from Card class
             TimeToLive = 68;
+            SetCreationDate();//Calling from Card class
+            SetExpireryDate();//Calling from Expire class
         }
 
         #endregion

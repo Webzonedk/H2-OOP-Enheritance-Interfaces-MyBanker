@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace MyBanker
 {
-    class VisaElectronCard : Expire, IDebit
+    class VisaElectronCard : Expire, IDebit //Enherit from CardClass and connected to the interface Idebit
     {
         #region Fields
         private int monthlyLimit;
@@ -32,13 +32,15 @@ namespace MyBanker
         public VisaElectronCard()
         {
             CardType = "Visa Electron";
-            CreateCardHolder();
+            CreateCardHolder();//Calling from Card class
             CardDigits = 16;
-            CreatePrefix();
-            CreateCardNumber();
+            CreatePrefix();//Calling from Card class
+            CreateCardNumber();//Calling from Card class
             RegNumber = 3520;
-            CreateAccountNumber();
+            CreateAccountNumber();//Calling from Card class
             TimeToLive = 60;
+            SetCreationDate();//Calling from Card class
+            SetExpireryDate();//Calling from Expire class
             MonthlyLimit = 10000;
         }
         #endregion
@@ -48,12 +50,12 @@ namespace MyBanker
         #region Methods
         public void CheckBalance()
         {
-            //Her the balance of the card is being checked
+            //Her the balance of the card is being checked as a part of the Interface
         }
 
         public void CheckMonthlyLimit()
         {
-
+            //Not implemented as there is no functional bank account
         }
 
         #endregion

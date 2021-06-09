@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace MyBanker
 {
-    class DebitCard : Card, IDebit
+    class DebitCard : Card, IDebit //Enherit from CardClass and connected to the interface Idebit
     {
         #region Fields
 
@@ -24,12 +24,14 @@ namespace MyBanker
         public DebitCard()
         {
             CardType = "Hævekort";
-            CreateCardHolder();
+            CreateCardHolder();//Calling from Card class
             CardDigits = 16;
-            CreatePrefix();
-            CreateCardNumber();
+            CreatePrefix();//Calling from Card class
+            CreateCardNumber();//Calling from Card class
             RegNumber = 3520;
-            CreateAccountNumber();
+            CreateAccountNumber();//Calling from Card class
+            SetCreationDate();//Calling from Card class
+
         }
         #endregion
 
@@ -40,7 +42,7 @@ namespace MyBanker
         #region Methods
         public void CheckBalance()
         {
-            //Her the balance of the card is being checked
+            //Her the balance of the card is being checked as a part of the Interface
         }
 
         #endregion

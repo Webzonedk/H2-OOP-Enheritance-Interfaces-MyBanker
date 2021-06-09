@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace MyBanker
 {
-    class MasterCard : Expire, ICredit
+    class MasterCard : Expire, ICredit //Enherit from CardClass and connected to the interface ICredit
     {
         #region Fields
         private int monthlyLimit;
@@ -45,13 +45,15 @@ namespace MyBanker
         public MasterCard()
         {
             CardType = "Mastercard";
-            CreateCardHolder();
+            CreateCardHolder();//Calling from Card class
             CardDigits = 16;
-            CreatePrefix();
-            CreateCardNumber();
+            CreatePrefix();//Calling from Card class
+            CreateCardNumber();//Calling from Card class
             RegNumber = 3520;
-            CreateAccountNumber();
+            CreateAccountNumber();//Calling from Card class
             TimeToLive = 60;
+            SetCreationDate();//Calling from Card class
+            SetExpireryDate();//Calling from Expire class
             MonthlyLimit = 30000;
             DailyLimit = 5000;
             CreditMax = 40000;
@@ -67,7 +69,7 @@ namespace MyBanker
 
         public void CheckCreditMax()
         {
-            //Here the Credit is being checked to ensure that the credit is not being broken
+            //Here the Credit would be checked to ensure that the credit is not being broken
         }
 
         #endregion
