@@ -10,8 +10,8 @@ namespace MyBanker
 
         static void Main(string[] args)
         {
-            Console.WriteLine();
-            Console.WriteLine("Velkommen til kortoprettelsessystemet.");
+            Console.WriteLine("--------------------------------------------------------------------------------------------------------------------------------------------------");
+            Console.WriteLine("------------------------------------------------------Velkommen til kortoprettelsessystemet.------------------------------------------------------");
             Console.WriteLine();
 
             //Instatiating a list for each type og card
