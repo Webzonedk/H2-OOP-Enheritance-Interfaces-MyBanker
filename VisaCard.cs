@@ -52,9 +52,13 @@ namespace MyBanker
 
 
         #region Methods
+        public void CheckMonthlyUse()
+        {
+           //Here the monthly use is being calculated
+        } 
         public void CheckBalance()
         {
-           //Her the balance of the card is being checked
+           //Here the balance of the card is being checked
         }
 
         public void CheckCreditMax()
