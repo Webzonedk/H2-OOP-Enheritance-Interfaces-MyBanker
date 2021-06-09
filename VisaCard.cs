@@ -11,8 +11,6 @@ namespace MyBanker
         #region Fields
         private int monthlyLimit;
         private int creditMax;
-
-
         #endregion
 
 
@@ -36,11 +34,18 @@ namespace MyBanker
         #region Constructors
         public VisaCard()
         {
+            CardType = "Visa/Dankort";
+            CreateCardHolder();
+            CardDigits = 16;
+            CreatePrefix();
+            CreateCardNumber();
+            RegNumber = 3520;
+            CreateAccountNumber();
             TimeToLive = 60;
+            SetExpireryDate();
             MonthlyLimit = 25000;
             CreditMax = 20000;
         }
-
         #endregion
 
 
@@ -48,12 +53,12 @@ namespace MyBanker
         #region Methods
         public void CheckBalance()
         {
-            throw new NotImplementedException();
+           //Her the balance of the card is being checked
         }
 
         public void CheckCreditMax()
         {
-            throw new NotImplementedException();
+            //Here the Credit is being checked to ensure that the credit is not being broken
         }
 
         #endregion

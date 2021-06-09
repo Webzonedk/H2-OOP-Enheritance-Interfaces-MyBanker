@@ -44,6 +44,13 @@ namespace MyBanker
         #region Constructors
         public MasterCard()
         {
+            CardType = "Mastercard";
+            CreateCardHolder();
+            CardDigits = 16;
+            CreatePrefix();
+            CreateCardNumber();
+            RegNumber = 3520;
+            CreateAccountNumber();
             TimeToLive = 60;
             MonthlyLimit = 30000;
             DailyLimit = 5000;
@@ -53,27 +60,15 @@ namespace MyBanker
         #endregion
 
         #region Methods
-
-        public void ChechDailyBalance()
-        {
-
-        }
-        public void ChechMonthlyBalance()
-        {
-
-        }
-
-
         public void CheckBalance()
         {
-            throw new NotImplementedException();
+            //Her the balance of the card is being checked
         }
 
         public void CheckCreditMax()
         {
-            throw new NotImplementedException();
+            //Here the Credit is being checked to ensure that the credit is not being broken
         }
-
 
         #endregion
     }

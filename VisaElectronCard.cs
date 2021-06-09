@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace MyBanker
 {
-    class VisaElectronCard : Expire, ICredit
+    class VisaElectronCard : Expire, IDebit
     {
         #region Fields
         private int monthlyLimit;
@@ -31,9 +31,16 @@ namespace MyBanker
         #region Constructors
         public VisaElectronCard()
         {
+            CardType = "Visa Electron";
+            CreateCardHolder();
+            CardDigits = 16;
+            CreatePrefix();
+            CreateCardNumber();
+            RegNumber = 3520;
+            CreateAccountNumber();
             TimeToLive = 60;
+            MonthlyLimit = 10000;
         }
-
         #endregion
 
 
@@ -41,12 +48,12 @@ namespace MyBanker
         #region Methods
         public void CheckBalance()
         {
-            throw new NotImplementedException();
+            //Her the balance of the card is being checked
         }
 
-        public void CheckCreditMax()
+        public void CheckMonthlyLimit()
         {
-            throw new NotImplementedException();
+
         }
 
         #endregion

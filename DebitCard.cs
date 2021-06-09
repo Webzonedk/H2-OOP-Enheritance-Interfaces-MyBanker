@@ -23,9 +23,14 @@ namespace MyBanker
         #region Constructors
         public DebitCard()
         {
-
+            CardType = "Hævekort";
+            CreateCardHolder();
+            CardDigits = 16;
+            CreatePrefix();
+            CreateCardNumber();
+            RegNumber = 3520;
+            CreateAccountNumber();
         }
-
         #endregion
 
 
@@ -35,12 +40,7 @@ namespace MyBanker
         #region Methods
         public void CheckBalance()
         {
-            throw new NotImplementedException();
-        }
-
-        public void CheckCreditMax()
-        {
-            throw new NotImplementedException();
+            //Her the balance of the card is being checked
         }
 
         #endregion

@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace MyBanker
 {
-    class MaestroCard : Expire, ICredit
+    class MaestroCard : Expire, IDebit
     {
         #region Fields
   
@@ -24,8 +24,14 @@ namespace MyBanker
         public MaestroCard()
         
         {
+            CardType = "Maestro";
+            CreateCardHolder();
+            CardDigits = 19;
+            CreatePrefix();
+            CreateCardNumber();
+            RegNumber = 3520;
+            CreateAccountNumber();
             TimeToLive = 68;
-
         }
 
         #endregion
@@ -35,13 +41,10 @@ namespace MyBanker
         #region Methods
         public void CheckBalance()
         {
-            throw new NotImplementedException();
+            //Her the balance of the card is being checked
         }
 
-        public void CheckCreditMax()
-        {
-            throw new NotImplementedException();
-        }
+
 
         #endregion
     }

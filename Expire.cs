@@ -11,6 +11,8 @@ namespace MyBanker
         #region Fields
         private byte timeToLive;
         #endregion
+        private DateTime expireDate;
+
 
 
 
@@ -20,22 +22,26 @@ namespace MyBanker
             get { return timeToLive; }
             set { timeToLive = value; }
         }
+        public DateTime ExpireDate
+        {
+            get { return expireDate; }
+            set { expireDate = value; }
+        }
         #endregion
 
 
 
         #region Constructors
         public Expire()
-    
         {
        
         }
         #endregion
 
         #region Methods
-        public virtual void CreateExpireryDate()
+        public virtual void SetExpireryDate()
         {
-
+            ExpireDate = DateTime.Now.AddMonths(TimeToLive);
         }
         #endregion
     }
